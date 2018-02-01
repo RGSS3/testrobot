@@ -1,1 +1,1 @@
-R /^-time/ do `time /t` end
+R /^-time/ do `time /t`.chomp("\n") end
