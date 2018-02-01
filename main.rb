@@ -6,7 +6,7 @@ R /^-time/ do
 end
 
 COMMON_DICT = File.read("./etc/rseg/dict/cedict.zh_CN.utf8").split("\n")
-require_relative 'zone.rb'
+load File.join(File.expand_path(File.dirname(__FILE__)),  'zone.rb')
 R /^-diary/ do
   date = `date /t`.encode("UTF-8", "GBK", replace: '?', invalid: :replace, undef: :replace, fallback: '?').chomp("\n")
   time = `time /t`.encode("UTF-8", "GBK", replace: '?', invalid: :replace, undef: :replace, fallback: '?').chomp("\n")
